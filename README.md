@@ -1,35 +1,59 @@
-Requirements
-General
+# 0x11. C - printf
 
-    Allowed editors: vi, vim, emacs
-    All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-    All your files should end with a new line
-    A README.md file, at the root of the folder of the project is mandatory
-    Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-    You are not allowed to use global variables
-    No more than 5 functions per file
-    In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-    The prototypes of all your functions should be included in your header file called main.h
-    Don’t forget to push your header file
-    All your header files should be include guarded
-    Note that we will not provide the _putchar function for this project
+## Project Overview
+This group project was conducted by Carl Birkenstock and Keegan Joubert, focusing on creating a custom `printf` function from scratch. The project combined understanding of C programming, use of standard input and output libraries, and efficient memory management. The development span took place from November 10, 2023, to November 15, 2023.
 
-Authorized functions and macros
+## Objectives
+- To replicate the functionality of the standard library `printf` function.
+- To handle conversion specifiers for printing different types of data.
+- To manage memory allocation and deallocation effectively.
 
-    write (man 2 write)
-    malloc (man 3 malloc)
-    free (man 3 free)
-    va_start (man 3 va_start)
-    va_end (man 3 va_end)
-    va_copy (man 3 va_copy)
-    va_arg (man 3 va_arg)
+## Resources
 
-Compilation
+### Read or Watch:
+- [Secrets of printf](https://www.cypress.com/file/54761/download)
+- [Group Projects concept page](https://intranet.hbtn.io/concepts/111)
+- [Flowcharts concept page](https://intranet.hbtn.io/concepts/130)
+- Man pages: `printf (3)`
 
-    Your code will be compiled this way:
+## Requirements
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+### General
+- **Development Environment:** Ubuntu 20.04 LTS using gcc with the options `-Wall -Werror -Wextra -pedantic -std=gnu89`.
+- Each file should end with a new line.
+- A `README.md` file is mandatory at the root of the project.
+- Code should conform to the Betty style.
+- Global variables are forbidden.
+- No more than 5 functions per file are allowed.
+- The project should include a header file `main.h` with all function prototypes, which must be include guarded.
 
-    As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
-    Our main files will include your main header file (main.h): #include main.h
-    You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use:
+### GitHub
+- One repository per group is required. Other members should not fork the project to avoid duplicated effort.
+
+### Authorized functions and macros
+- `write` (man 2 write)
+- `malloc` (man 3 malloc)
+- `free` (man 3 free)
+- `va_start` (man 3 va_start)
+- `va_end` (man 3 va_end)
+- `va_copy` (man 3 va_copy)
+- `va_arg` (man 3 va_arg)
+
+## Compilation
+- Compiled with: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
+- The project includes comprehensive testing against the standard `printf` to ensure compatibility and correctness.
+
+## Example Usage
+The custom `_printf` function aims to mimic the standard `printf` behavior as closely as possible, including handling various data types and formats. The following is an example of its usage:
+
+```c
+#include "main.h"
+
+int main(void) {
+    _printf("Custom printf test:\n");
+    _printf("Character: %c\n", 'A');
+    _printf("String: %s\n", "Hello, world");
+    _printf("Integer: %d\n", 123);
+    _printf("Percent sign: %%\n");
+    return 0;
+}
